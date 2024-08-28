@@ -38,7 +38,7 @@ let main
   let module Storage = (val Db_store.storage_module db_format) in
   let db = Db_writer.make () in
   let no_pkg = Db.Entry.Package.v ~name:"" ~version:"" in
-  let register ~pkg ~favourite id () item =
+  let register ~pkg ~favourite _id () item =
     List.iter
       (Load_doc.register_entry
          ~db
