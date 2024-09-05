@@ -151,7 +151,7 @@ let rec categorize id =
     let parent = Identifier.label_parent { id with iv = x } in
     categorize (parent :> Identifier.Any.t)
   | `AssetFile _ | `SourceLocationMod _ | `SourceLocation _ | `SourcePage _
-  | `SourceLocationInternal _ ->
+  | `SourceLocationInternal _ | `Library _ ->
     `ignore (* unclear what to do with those *)
 
 let categorize Odoc_search.Entry.{ id; _ } =
